@@ -1,0 +1,13 @@
+[Unit]
+Description="flask_todo"
+
+After=mysql.service
+Documentation="https://github.com/4nndr01d/flask_todo/blob/dev/README.md"
+
+[Service]
+User=root
+WorkingDirectory=/root/flask_todo/
+ExecStart= /bin/bash -c 'cd ~/flask_todo/ && source ./env/bin/activate && python ./app.py'
+
+[Install]
+WantedBy=multi-user.target
